@@ -13,10 +13,22 @@ def calcd1_d2(s, k, t, r, sigma):
 def calculate_call_price(s, k, d1, d2, r, t):
     return s * norm.cdf(d1) - k * Math.exp(-r*t) * norm.cdf(d2)
 
-def create_heatmap(s, sigma, k, r, t):
+
+def calculate_call_option(S, sigma, K, r, t):
+    """Calculate call option price using Black-Scholes formula."""
+    d1, d2 = calcd1_d2(S, K, t, r, sigma)
+
+    call_price = S * norm.cdf(d1) - K * np.exp(-r * t) * norm.cdf(d2)
+    return call_price
+
+
+def create_heatmap(s_min, s_max, sigma_min, sigma_max, k, r, t):
+    # Use numpy to generate a grid of S and σ values
+    # Calculate option prices on the grid
+    ...
     data = np.full((10, 10), np.nan)
-    spot_prices = np.linspace(s * 0.8, s * 1.2, 10)
-    sigmas = np.linspace(0.06, 0.76, 10)
+    spot_prices = np.linspace(s_min, s_max, 10)
+    sigmas = np.linspace(sigma_min, sigma_max, 10)
 
     for i, sig in enumerate(sigmas):
         for j, spot in enumerate(spot_prices):
@@ -25,7 +37,7 @@ def create_heatmap(s, sigma, k, r, t):
             data[i][j] = call_price
 
     fig, ax = plt.subplots(figsize=(8, 6))
-    sns.heatmap(data, annot=True, fmt=".2f", cmap="RdYlGn_r",
+    sns.heatmap(data, annot=True, fmt=".2f",cmap='viridis',
                 xticklabels=np.round(spot_prices, 2),
                 yticklabels=np.round(sigmas, 2), ax=ax)
     ax.set_xlabel("Spot Price (S)")
