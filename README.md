@@ -1,6 +1,6 @@
-# 📈 Call Option Heatmap Visualizer
+# 📈 Call & 📉 Put Option Heatmap Visualizer
 
-A simple and interactive web application built with [Streamlit](https://streamlit.io/) that visualizes the value of European call options over a range of spot prices and volatilities using a heatmap. The app also displays the calculated call option value for a fixed set of parameters with a clear interface.
+A simple and interactive web application built with [Streamlit](https://streamlit.io/) that visualizes the value of **European Call and Put Options** over a range of spot prices and volatilities using heatmaps. The app also displays the calculated option values for a fixed set of parameters with a clean interface.
 
 ---
 
@@ -12,24 +12,33 @@ A simple and interactive web application built with [Streamlit](https://streamli
   - Time to Maturity (t)
   - Spot Price range (S<sub>min</sub> to S<sub>max</sub>)
   - Volatility range (σ<sub>min</sub> to σ<sub>max</sub>)
-- ✅ Highlighted call option value for a **fixed** spot price and volatility
+- ✅ Highlighted **Call** and **Put** option values for a **fixed** spot price and volatility
+- 📊 Two interactive heatmaps for call and put values
 - 💡 Simple UI with live updates as parameters change
 
 ---
 
 ## 📷 Screenshot
 
-![heatmap-demo](screenshot.png)  
-> Example heatmap showing option values over spot price and volatility
+![heatmap-demo](Black-Scholes.png)  
+> Example heatmaps showing call and put option values over spot price and volatility
 
 ---
 
 ## 🧠 How it Works
 
-The application uses the **Black-Scholes** model to calculate the price of a European call option:
+The application uses the **Black-Scholes** model to calculate the prices of European Call and Put options.
+
+### Call Option Formula:
 
 \[
 C = S \cdot N(d_1) - K \cdot e^{-rt} \cdot N(d_2)
+\]
+
+### Put Option Formula:
+
+\[
+P = K \cdot e^{-rt} \cdot N(-d_2) - S \cdot N(-d_1)
 \]
 
 where:
@@ -43,8 +52,8 @@ where:
 
 - **Python**
 - **Streamlit** for the interactive web UI
-- **Matplotlib** for plotting the heatmap
-- **SciPy** for the normal distribution (`scipy.stats.norm`)
+- **Matplotlib** for plotting the heatmaps
+- **SciPy** for the cumulative normal distribution (`scipy.stats.norm`)
 
 ---
 
