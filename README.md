@@ -40,8 +40,8 @@ P = K · e^(–rt) · N(–d₂) – S · N(–d₁)
 
 where:
 
-- \( d_1 = \frac{\ln(S/K) + (r + \sigma^2/2)t}{\sigma \sqrt{t}} \)
-- \( d_2 = d_1 - \sigma \sqrt{t} \)
+- d₁ = [ln(S / K) + (r + σ² / 2) · t] / (σ · √t)  
+- d₂ = d₁ – σ · √t
 
 ---
 
