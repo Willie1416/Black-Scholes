@@ -6,7 +6,7 @@ st.set_page_config(page_title="Call & Put Option Heatmap", layout="wide")
 
 st.title("Call & Put Option Heatmap Visualizer")
 
-st.sidebar.header("Variabels")
+st.sidebar.header("Variables")
 # Strike, Rate, and Time remain single values
 s = st.sidebar.number_input("Spot Price (S)", value=100.0, step=1.0)
 k = st.sidebar.number_input("Strike Price (K)", value=105.0, step=1.0)
