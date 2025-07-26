@@ -31,15 +31,12 @@ The application uses the **Black-Scholes** model to calculate the prices of Euro
 
 ### Call Option Formula:
 
-\[
-C = S \cdot N(d_1) - K \cdot e^{-rt} \cdot N(d_2)
-\]
+C = S · N(d₁) – K · e^(–rt) · N(d₂)
+
 
 ### Put Option Formula:
 
-\[
-P = K \cdot e^{-rt} \cdot N(-d_2) - S \cdot N(-d_1)
-\]
+P = K · e^(–rt) · N(–d₂) – S · N(–d₁)
 
 where:
 
