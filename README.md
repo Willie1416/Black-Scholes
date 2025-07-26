@@ -2,6 +2,8 @@
 
 A simple and interactive web application built with [Streamlit](https://streamlit.io/) that visualizes the value of **European Call and Put Options** over a range of spot prices and volatilities using heatmaps. The app also displays the calculated option values for a fixed set of parameters with a clean interface.
 
+🔗 **Live App:** [https://black-scholes-model-william-hall.streamlit.app/](https://black-scholes-model-william-hall.streamlit.app/)
+
 ---
 
 ## 🚀 Features
